@@ -1,0 +1,19 @@
+[package]
+name = "awaretun"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+babel-protocol = "0.6.0"
+jni = "0.21.1"
+libc = "0.2"
+pktkit = { version = "0.1.11", default-features = false, features = ["slirp"] }
+quinn = { version = "0.11.11", default-features = false, features = ["runtime-tokio", "rustls-ring"] }
+rcgen = "0.13"
+rustls = { version = "0.23", features = ["ring"] }
+tokio = { version = "1", features = ["io-util", "macros", "net", "rt-multi-thread", "time"] }
+tun-rs = { version = "2.8.11", features = ["async"] }
